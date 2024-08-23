@@ -7,7 +7,7 @@
     <script>
         function testandoArvoreDOM(){
             
-            var element = document.documentElement.lastChild();
+            var element = document.documentElement.lastChild;
             alert("Eu sou o node: "+ element.nodeName)
 
             var outroElemento = document.getElementsByTagName('h1')[0];
@@ -19,6 +19,11 @@
     </script>
 </head>
 <body>
-    
+    <h1>Teste</h1>
+    <p>
+        voce esta apredendo a utilizar arvores em DOM?
+       <button><a href="www.google.com">Google</a></button>
+    </p>
+    <span onclick="testandoArvoreDOM();">Clique aqui para testar</span>
 </body>
 </html>
