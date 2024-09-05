@@ -46,7 +46,8 @@
         this.data_nascimento = data_nascimento
          }
         infoautor(){
-            console.log(`${this.id + this.nome + this.data_nascimento}`);
+            //console.log(`${this.id}  ${this.nome}  ${this.data_nascimento}`);
+            console.log(this.id+ " "+ this.nome + " "+ this.data_nascimento);
         }
     }
 
@@ -88,21 +89,25 @@
             if (arquivo) {
                 lerArquivoCSV(arquivo, function (conteudo) {
                     const arrayCSV = converterCSVparaArray(conteudo);
-                    console.log(arrayCSV);
+                    //console.log(arrayCSV);
 
                     arrayCSV.forEach(function (linha) {
-                        console.log(linha);
+                        //console.log(linha);
                         const arrayinfo = [];
 
                         linha.forEach(function (info) {
                             const valores = info.split(';');
                             arrayinfo.push(valores);
-                            //console.log(arrayinfo)
-                            const id = arrayinfo[0];
-                            const nome = arrayinfo[1];
-                            const data_nascimento = arrayinfo[2];
+                            //console.log(valores)
+                            const id = valores[0];
+                            //console.log(id);
+                            const nome = valores[1];
+                           // console.log(nome);
+                            const data_nascimento = valores[2];
+                           // console.log(data_nascimento);
                             let a = new Autor (id, nome, data_nascimento);   
-                            //lista_autores.add(a); 
+                            a.infoautor();
+                            lista_autores.push(a); 
                         });
                         console.log(lista_autores); 
                     });                    
